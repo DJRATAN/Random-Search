@@ -1,13 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Auto Bing Search",
+  "name": "Random Search",
   "version": "1.0",
+  "description": "Simulate Bing searches automatically to earn Microsoft Rewards points.",
   "permissions": [
     "tabs",
-    "storage"
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.bing.com/*"
   ],
   "background": {
     "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "logo.png"
   },
   "action": {
     "default_popup": "popup.html"
