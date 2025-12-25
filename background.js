@@ -1,7 +1,11 @@
 let openedTabs = [];
 let searchInterval = null;
 let searchCount = 0;
- 
+
+// store browser start time
+chrome.storage.local.set({
+  browserStartTime: Date.now()
+});
 
 function generateRandomQuery() {
   return words[Math.floor(Math.random() * words.length)] || "random";
@@ -37,20 +41,19 @@ function startAutoSearch() {
     openBingSearch();
     searchCount++;
 
-    // 🔁 keep popup updated
-    chrome.runtime.sendMessage({
-      action: "updateCount",
-      count: searchCount
+    // save to storage instead of sendMessage (no errors)
+    chrome.storage.local.set({
+      searchCount: searchCount
     });
 
   }, 9000);
 }
 
-// 🔄 AUTO START (NO CLICK REQUIRED)
+// AUTO START (NO CLICK)
 chrome.runtime.onInstalled.addListener(startAutoSearch);
 chrome.runtime.onStartup.addListener(startAutoSearch);
 
-// Optional manual trigger still supported
+// manual trigger optional
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === "openTabs") {
     startAutoSearch();

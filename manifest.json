@@ -5,7 +5,8 @@
   "description": "Simulate Bing searches automatically to earn Microsoft Rewards points.",
   "permissions": [
     "tabs",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "*://www.bing.com/*"
