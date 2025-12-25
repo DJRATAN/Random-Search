@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tab Opener</title>
-  <link rel="icon" href="icon.png" type="image/png"> <!-- Add this line to include the icon -->
+  <link rel="icon" href="logo.png" type="image/png"> <!-- Add this line to include the icon -->
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
+
     button {
       padding: 10px 20px;
       background-color: #4CAF50;
@@ -18,15 +20,26 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
   <h2>Tab Opener</h2>
   <p>Click the button below to start opening tabs.</p>
-  <button id="openTabs">Open Tabs</button>
+ 
+
+
+  <div id="timer">⏱ 0 sec</div>
+
+  <button id="openTabs">Start Search</button>
+
+  <div id="count">🔁 Searches: 0 / 100</div>
+
   <script src="popup.js"></script>
 </body>
+
 </html>
