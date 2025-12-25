@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Bing Mobile Rewards Automator",
+  "version": "1.0",
+  "description": "Simulate Bing searches automatically to earn Microsoft Rewards points.",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["*://www.bing.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
